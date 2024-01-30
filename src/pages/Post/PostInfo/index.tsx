@@ -15,8 +15,19 @@ import {
 	faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { IssueType } from "../../Home";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale/pt-BR";
 
-export function PostInfo() {
+interface PostInfoProps {
+	issue: IssueType;
+}
+
+export function PostInfo({ issue }: PostInfoProps) {
+	const dateRelativeToNow = formatDistanceToNow(issue.created_at, {
+		locale: ptBR,
+		addSuffix: true,
+	});
 	return (
 		<InfoCard>
 			<InfoCardContent>
@@ -25,23 +36,24 @@ export function PostInfo() {
 						<FontAwesomeIcon icon={faChevronLeft} />
 						Voltar
 					</CardLink>
-					<CardLink href="">
+					<CardLink href={issue.html_url}>
 						Ver no GitHub
 						<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 					</CardLink>
 				</InfoCardHeader>
-				<InfoTitle>JavaScript data types and data structures</InfoTitle>
+				<InfoTitle>{issue.title}</InfoTitle>
 				<InfoCardFooter>
 					<Info>
 						<FontAwesomeIcon icon={faGithub} />
-						ruanosena
+						{issue.user.login}
 					</Info>
 					<Info>
 						<FontAwesomeIcon icon={faCalendarDay} />
-						Há 1 dia
+						{dateRelativeToNow}
 					</Info>
 					<Info>
-						<FontAwesomeIcon icon={faComment} />5 comentários
+						<FontAwesomeIcon icon={faComment} />
+						{issue.comments == 1 ? `${issue.comments} comentário` : `${issue.comments} comentários`}
 					</Info>
 				</InfoCardFooter>
 			</InfoCardContent>

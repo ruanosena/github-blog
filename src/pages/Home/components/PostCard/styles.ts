@@ -4,6 +4,7 @@ export const Card = styled.article`
 	background: ${(props) => props.theme.post};
 	border-radius: 10px;
 	padding: 2rem;
+	max-width: 416px;
 `;
 
 export const CardHeader = styled.header`
@@ -24,7 +25,7 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardBody = styled.div`
-	max-height: 7rem;
+	max-height: 6.7rem;
 	overflow: hidden;
 
 	p {

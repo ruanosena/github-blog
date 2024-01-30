@@ -25,7 +25,7 @@ export const BlogInput = styled.input`
 	padding: 0.75rem 1rem;
 	border: 1px solid ${(props) => props.theme.border};
 	border-radius: 6px;
-	color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text};
 	background: ${(props) => props.theme.input};
 
 	&::placeholder {

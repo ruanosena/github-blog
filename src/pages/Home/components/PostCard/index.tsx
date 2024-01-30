@@ -17,7 +17,7 @@ export function PostCard({ issue }: PostCardProps) {
 	return (
 		<Card>
 			<CardHeader>
-				<NavLink to={`/${issue.id}`} style={{ textDecoration: "none", flex: 1 }}>
+				<NavLink to={`/${issue.number}`} style={{ textDecoration: "none", flex: 1 }}>
 					<CardTitle>{issue.title}</CardTitle>
 				</NavLink>
 				<span>{dateRelativeToNow}</span>

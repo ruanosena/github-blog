@@ -17,7 +17,7 @@ export const CardHeader = styled.header`
 `;
 
 export const CardTitle = styled.h3`
-	flex: 1;
+	/* flex: 1; */
 	font-size: 1.25rem;
 	font-weight: bold;
 	color: ${(props) => props.theme.title};

@@ -25,6 +25,7 @@ export const BlogInput = styled.input`
 	padding: 0.75rem 1rem;
 	border: 1px solid ${(props) => props.theme.border};
 	border-radius: 6px;
+	color: ${(props) => props.theme.text};
 	background: ${(props) => props.theme.input};
 
 	&::placeholder {
@@ -37,7 +38,7 @@ export const BlogContent = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	gap: 2rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
 `;
